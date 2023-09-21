@@ -1,0 +1,13 @@
+{
+  "name": "Intro to AQA with JavaScript",
+  "author": "Mariia Ushakova",
+  "version": "1.0.0",
+  "description": "Link to the task https://learn.epam.com/learning-piece/sharing?rootId=5440070&amp;itemId=6633583",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
