@@ -1,13 +1,25 @@
 {
   "name": "Intro to AQA with JavaScript",
-  "author": "Mariia Ushakova",
+  "author": "",
   "version": "1.0.0",
   "description": "Link to the task https://learn.epam.com/learning-piece/sharing?rootId=5440070&amp;itemId=6633583",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha",
+    "coverage": "c8 npm test",
+    "lint": "eslint ./ --fix",
+    "prepare": "husky install"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "c8": "^8.0.1",
+    "chai": "^4.3.9",
+    "eslint": "^8.50.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.28.1",
+    "husky": "^8.0.3",
+    "mocha": "^10.2.0",
+    "mochawesome": "^7.1.3"
+  }
 }
