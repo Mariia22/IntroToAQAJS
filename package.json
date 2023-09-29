@@ -1,13 +1,18 @@
 {
-  "name": "Intro to AQA with JavaScript",
-  "author": "Mariia Ushakova",
+  "name": "introtoaqajs",
   "version": "1.0.0",
-  "description": "Link to the task https://learn.epam.com/learning-piece/sharing?rootId=5440070&amp;itemId=6633583",
+  "description": "HOME TASK #1 (main branch)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "wdio": "wdio run ./wdio.conf.js"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@wdio/cli": "^8.16.16",
+    "@wdio/local-runner": "^8.16.16",
+    "@wdio/mocha-framework": "^8.16.15",
+    "@wdio/spec-reporter": "^8.16.12"
+  }
 }
