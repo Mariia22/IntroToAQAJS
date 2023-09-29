@@ -1,8 +1,7 @@
 const { expect } = require('chai');
-const { describe, beforeEach, afterEach, it } = require('mocha');
-const NumbersValidator = require('../app/numbers_validator');
+const NumbersValidator = require('../../app/numbers_validator');
 
-describe('Number validator positive tests', () => {
+describe('Even number validator positive tests', () => {
   let validator;
 
   beforeEach(() => {
@@ -39,7 +38,7 @@ describe('Number validator positive tests', () => {
   });
 });
 
-describe('Number validator negative tests', () => {
+describe('Even number validator negative tests', () => {
   let validator;
 
   beforeEach(() => {
