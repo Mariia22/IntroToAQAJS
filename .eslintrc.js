@@ -1,7 +1,5 @@
 module.exports = {
   'env': {
-    'browser': true,
-    'es2021': true,
     'mocha': true
   },
   'extends': 'google',
@@ -9,7 +7,7 @@ module.exports = {
   ],
   'parserOptions': {
     'ecmaVersion': 'latest',
-    'sourceType': 'module',
+    'sourceType': 'script',
   },
   "ignorePatterns": ["wdio.conf.js"],
   'rules': {
