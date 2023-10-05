@@ -1,14 +1,16 @@
-const { CareerPage } = require("../po/pages");
+const { CareerPage, MainPage } = require("../po/pages");
 
 const careerPage = new CareerPage()
+const mainPage = new MainPage()
 
 describe('test', ()=>{
   
   beforeEach( async()=>{
-    await careerPage.open()
+    await mainPage.open()
   })
   
-  it('test', async ()=>{
-    console.log(1)
+  it('should career page is opened', async ()=>{
+   await mainPage.menu.getItem('careers').click();
+    expect(browser.url).toHaveUrl('/careers')
   });
 });
