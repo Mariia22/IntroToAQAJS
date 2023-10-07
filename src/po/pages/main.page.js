@@ -1,8 +1,8 @@
-const BasePage = require("./base.page");
+const BasePage = require('./base.page');
 
 class MainPage extends BasePage {
-  constructor(){
-    super('/')
+  constructor() {
+    super('/');
   }
 }
-module.exports = MainPage
+module.exports = MainPage;

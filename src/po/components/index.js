@@ -1,7 +1,7 @@
-const HeaderComponent = require('./header.comp')
-const MainMenuComponent = require('./mainMenu.comp')
+const HeaderComponent = require('./header/header.component');
+const CareerFormComponent = require('./career/careerForm.component');
 
 module.exports = {
   HeaderComponent,
-  MainMenuComponent
-}
+  CareerFormComponent,
+};

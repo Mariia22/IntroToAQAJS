@@ -11,5 +11,6 @@ module.exports = {
   },
   "ignorePatterns": ["wdio.conf.js"],
   'rules': {
+    "require-jsdoc" : 0,
   },
 };

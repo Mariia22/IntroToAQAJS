@@ -1,10 +1,11 @@
-const BasePage = require("./base.page")
+const {CareerFormComponent} = require('../components');
+const BasePage = require('./base.page');
 
 class CareerPage extends BasePage {
-  constructor () {
-    super('careers')
+  constructor() {
+    super('careers');
+    this.form = new CareerFormComponent();
   }
-
 }
 
-module.exports = CareerPage
+module.exports = CareerPage;

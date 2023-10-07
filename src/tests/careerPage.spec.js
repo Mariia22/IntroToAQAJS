@@ -1,16 +1,23 @@
-const { CareerPage, MainPage } = require("../po/pages");
+const {CareerPage} = require('../po/pages');
 
-const careerPage = new CareerPage()
-const mainPage = new MainPage()
+describe('Career page', ()=>{
+  const careerPage = new CareerPage();
+  
+  beforeEach( async ()=>{
+    await careerPage.open();
+  });
 
-describe('test', ()=>{
-  
-  beforeEach( async()=>{
-    await mainPage.open()
-  })
-  
-  it('should career page is opened', async ()=>{
-   await mainPage.menu.getItem('careers').click();
-    expect(browser.url).toHaveUrl('/careers')
+  // it('Check page title', async ()=>{
+  //   await expect(browser).toHaveTitle(
+  //     'Explore Professional Growth Opportunities | EPAM Careers'
+  //     );
+  // });
+
+  it('Check keyInput attributes', async ()=>{
+    const input = careerPage.form.keywordInput
+    await expect(input.label).toHaveText('Keyword or job ID', {ignoreCase:true});
+    
+   // const placeholder = await careerPage.form.keywordInput.getProperty('placeholder')
+    await expect(input.placeholder).toBe('Keyword', {ignoreCase:true});
   });
 });
