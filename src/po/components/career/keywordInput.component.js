@@ -5,13 +5,9 @@ class KeywordInput extends BaseComponent {
     super('#new_form_job_search-keyword');
   }
 
-  get label (){
+  get label() {
     return $('label[for="new_form_job_search-keyword"]');
-  }
-
-  get placeholder () {
-    return $('#new_form_job_search-keyword')['placeholder']
   }
 }
 
-module.exports = KeywordInput
+module.exports = KeywordInput;
