@@ -8,8 +8,16 @@ class LocationSelector extends BaseComponent {
     return $('label[for="new_form_job_search-location"]');
   }
 
-  get selectedText() {
-    return $('//*[@id="jobSearchFilterForm"]/div[2]/div/span/span[1]/span/span[1]');
+  get country() {
+    return $('//*[@id="select2-new_form_job_search-location-results"]/div[4]/div/div/li[37]');
+  }
+
+  get city() {
+    return $('//*[@id="select2-new_form_job_search-location-results"]/div[4]/div/div/li[37]/ul/li[2]');
+  }
+
+  get selectIcon() {
+    return $('//*[@id="jobSearchFilterForm"]/div[2]/div/span/span[1]/span/span[2]');
   }
 }
 

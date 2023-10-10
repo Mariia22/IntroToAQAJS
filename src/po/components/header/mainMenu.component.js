@@ -9,6 +9,8 @@ class MainMenuComponent extends BaseComponent {
     const selectors = {
       services: '//li//span//a[@href="/services"]',
       insights: '//li//span//a[@href="/insights"]',
+      industries: '//ul/li[2]/span[1]/a',
+      medtech: '//ul/li[2]/div/div/div[2]/ul[2]/li[1]/ul/li/a',
       about: '//li//span//a[@href="/about"]',
       careers: '//li//span//a[@href="/careers"]',
     };

@@ -1,16 +1,23 @@
 const BaseComponent = require('../common/base.component');
-const FindButton = require('./findButton.component');
-const KeywordInput = require('./keywordInput.component');
 const LocationSelector = require('./locationSelector.component');
 const SkillsSelector = require('./skillsSelector.component');
 
 class CareerFormComponent extends BaseComponent {
   constructor() {
     super('#jobSearchFilterForm');
-    this.keywordInput = new KeywordInput();
     this.locationSelector = new LocationSelector();
     this.skillsSelector = new SkillsSelector();
-    this.submitButton = new FindButton();
+  }
+  get input() {
+    return $('#new_form_job_search-keyword');
+  }
+
+  get inputLabel() {
+    return $('label[for="new_form_job_search-keyword"]');
+  }
+
+  get submitButton() {
+    return $('#jobSearchFilterForm > button');
   }
 }
 
