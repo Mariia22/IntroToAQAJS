@@ -14,6 +14,7 @@ describe('Career page', ()=>{
     );
   });
 
+  // I've overwritten base click()command, so scrolling is no longer needed.
   it('Check search using job search form', async ()=>{
     await pages('main').header.menu.getItem('careers').click();
     await pages('career').cookieAcceptButton.click();

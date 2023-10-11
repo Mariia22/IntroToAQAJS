@@ -1,5 +1,6 @@
 const BaseComponent = require('../common/base.component');
 const HamburgerMenuComponent = require('./hamburgerMenu.component');
+const LanguageMenuComponent = require('./languageMenu.component');
 const MainMenuComponent = require('./mainMenu.component');
 
 class HeaderComponent extends BaseComponent {
@@ -7,6 +8,7 @@ class HeaderComponent extends BaseComponent {
     super('.header-ui-23');
     this.menu = new MainMenuComponent();
     this.hamburgerMenu = new HamburgerMenuComponent();
+    this.languageMenu = new LanguageMenuComponent();
   }
 
   get contactButton() {
@@ -39,6 +41,10 @@ class HeaderComponent extends BaseComponent {
 
   get hamburgerMenuButton() {
     return $('.hamburger-menu__button');
+  }
+
+  get switchLanguageButton () {
+    return $('.location-selector__button');
   }
 }
 module.exports = HeaderComponent;

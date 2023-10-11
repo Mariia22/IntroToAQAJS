@@ -5,6 +5,15 @@ function overwriteCommands() {
   },true)
 }
 
+function addCommands() {
+  browser.addCommand('waitThenClick', async function() {
+      await this.waitForExist();
+      await this.waitForDisplayed();
+      await this.click();
+  }, true)
+}
+
 module.exports = {
-  overwriteCommands
+  overwriteCommands,
+  addCommands
 }

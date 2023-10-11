@@ -1,3 +1,5 @@
+const customCommands = require('./customCommands');
+
 exports.config = {
   //
   // ====================
@@ -177,8 +179,7 @@ exports.config = {
      * @param {string} cid worker id (e.g. 0-0)
      */
   beforeSession: function (config, capabilities, specs, cid) {
-    const customCommands = require('./customCommands')
-    //customCommands.addCustomCommands()
+    customCommands.addCommands()
     customCommands.overwriteCommands()
   },
   /**
