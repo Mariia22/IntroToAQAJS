@@ -37,12 +37,12 @@ describe('Main page', ()=>{
     await expect(pages('main').contactInfo).toHaveTextContaining(['41 University Drive • Suite 202,', ' Newtown, PA 18940 • USA ', 'P +1-267-759-9000', 'F +1-267-759-8989']);
   });
 
-    /* Task2 */
+  /* Task2 */
 
   // I use my new command 'waitThenClick'
-  it('Check language switch', async() => {
+  it('Check language switch', async () => {
     await (pages('main').header.switchLanguageButton).click();
-    await (pages('main').header.languageMenu.getLanguage('German')).waitThenClick()
-    await expect(browser).toHaveUrl('https://www.epam.de/')
-  })
+    await (pages('main').header.languageMenu.getLanguage('German')).waitThenClick();
+    await expect(browser).toHaveUrl('https://www.epam.de/');
+  });
 });

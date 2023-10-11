@@ -8,6 +8,10 @@ class SearchResultList extends BaseComponent {
   get listItems() {
     return $$('.search-result__list>li');
   }
+
+  get messageNoResult() {
+    return $('.search-result__error-message-23');
+  }
 }
 
 module.exports = SearchResultList;

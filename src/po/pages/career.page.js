@@ -8,8 +8,8 @@ class CareerPage extends BasePage {
     this.searchList = new SearchResultList();
   }
 
-  get cookieAcceptButton () {
-    return $('#onetrust-accept-btn-handler')
+  get cookieAcceptButton() {
+    return $('#onetrust-accept-btn-handler');
   }
 }
 

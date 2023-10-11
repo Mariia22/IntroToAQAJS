@@ -43,7 +43,7 @@ class HeaderComponent extends BaseComponent {
     return $('.hamburger-menu__button');
   }
 
-  get switchLanguageButton () {
+  get switchLanguageButton() {
     return $('.location-selector__button');
   }
 }

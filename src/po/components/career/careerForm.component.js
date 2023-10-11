@@ -19,6 +19,14 @@ class CareerFormComponent extends BaseComponent {
   get submitButton() {
     return $('#jobSearchFilterForm > button');
   }
+
+  get officeCheckbox() {
+    return $('#jobSearchFilterForm > fieldset > div > p:nth-child(2)');
+  }
+
+  get relocationCheckbox() {
+    return $('#jobSearchFilterForm > fieldset > div > p:nth-child(3)');
+  }
 }
 
 module.exports = CareerFormComponent;
