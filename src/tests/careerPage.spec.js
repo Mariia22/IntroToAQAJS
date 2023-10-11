@@ -5,6 +5,8 @@ describe('Career page', ()=>{
     await pages('main').open();
   });
 
+  /* Task1 */
+
   it('Check page title', async ()=>{
     await pages('main').header.menu.getItem('careers').click();
     await expect(browser).toHaveTitle(
@@ -14,13 +16,14 @@ describe('Career page', ()=>{
 
   it('Check search using job search form', async ()=>{
     await pages('main').header.menu.getItem('careers').click();
+    await pages('career').cookieAcceptButton.click();
     await pages('career').form.input.setValue('Frontend');
     await pages('career').form.locationSelector.selectIcon.click();
-    await pages('career').form.locationSelector.country.scrollIntoView();
+    //await pages('career').form.locationSelector.country.scrollIntoView();
     await pages('career').form.locationSelector.country.click();
-    await pages('career').form.locationSelector.city.scrollIntoView();
+    //await pages('career').form.locationSelector.city.scrollIntoView();
     await pages('career').form.locationSelector.city.click();
-    await pages('career').form.submitButton.scrollIntoView();
+   // await pages('career').form.submitButton.scrollIntoView();
     await pages('career').form.submitButton.click();
     await expect(pages('career').searchList.listItems).toBeElementsArrayOfSize(2);
   });

@@ -1,9 +1,11 @@
 const {pages} = require('../po/pages');
 
-describe('Career page', ()=>{
+describe('Main page', ()=>{
   beforeEach( async ()=>{
     await pages('main').open();
   });
+
+  /* Task1 */
 
   it('Check the modification of the \'Contact us\' button\'s color and background color (light mode) after hovering', async ()=>{
     await (pages('main').header.themeSwitcher).click();
@@ -31,7 +33,7 @@ describe('Career page', ()=>{
     await (pages('main').header.hamburgerMenuButton).click();
     await (pages('main').header.hamburgerMenu.getItem('about')).click();
     await (pages('main').header.hamburgerMenu.getItem('aboutCompany')).click();
-    await (pages('main').header.hamburgerMenu.getItem('contact')).scrollIntoView();
+    //await (pages('main').header.hamburgerMenu.getItem('contact')).scrollIntoView();
     await (pages('main').header.hamburgerMenu.getItem('contact')).click();
     await expect(pages('main').contactInfo).toHaveTextContaining(['41 University Drive • Suite 202,', ' Newtown, PA 18940 • USA ', 'P +1-267-759-9000', 'F +1-267-759-8989']);
   });
