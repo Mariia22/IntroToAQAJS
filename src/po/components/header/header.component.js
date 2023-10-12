@@ -46,5 +46,9 @@ class HeaderComponent extends BaseComponent {
   get switchLanguageButton() {
     return $('.location-selector__button');
   }
+
+  get dropdownMenuList() {
+    return $('.top-navigation__flyout');
+  }
 }
 module.exports = HeaderComponent;

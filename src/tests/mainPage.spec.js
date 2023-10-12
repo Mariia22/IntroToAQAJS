@@ -39,10 +39,19 @@ describe('Main page', ()=>{
 
   /* Task2 */
 
-  // I use my new command 'waitThenClick'
+  // Here I use my new command 'waitThenClick'
   it('Check language switch', async () => {
     await (pages('main').header.switchLanguageButton).click();
     await (pages('main').header.languageMenu.getLanguage('German')).waitThenClick();
     await expect(browser).toHaveUrl('https://www.epam.de/');
+  });
+
+
+  it('Check that the link in the dropdown menu change text decoration after hovering', async () =>{
+    await (pages('main').header.menu.getItem('services')).moveTo();
+    await (pages('main').header.dropdownMenuList).waitForDisplayed();
+    await (pages('main').header.menu.getItem('optimizingforgrowth')).moveTo();
+    const textDecoration = await (pages('main').header.menu.getItem('optimizingforgrowth')).getCSSProperty('textDecoration');
+    await expect(textDecoration.value).toBe('underline 1px solid rgb(255, 255, 255)');
   });
 });

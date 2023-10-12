@@ -1,4 +1,5 @@
 const {pages} = require('../po/pages');
+const {Key} = require('webdriverio');
 
 describe('Career page', ()=>{
   beforeEach( async ()=>{
@@ -6,7 +7,7 @@ describe('Career page', ()=>{
     await pages('career').cookieAcceptButton.click();
   });
 
-  /* Task1 */
+  // /* Task1 */
 
   it('Check page title', async ()=>{
     await pages('main').header.menu.getItem('careers').click();
@@ -38,5 +39,16 @@ describe('Career page', ()=>{
     await pages('career').form.relocationCheckbox.click();
     await pages('career').form.submitButton.click();
     await expect(pages('career').searchList.messageNoResult).toHaveText('Sorry, your search returned no results. Please try another combination.');
+  });
+
+  it('Check copy/paste command from one input to another', async () =>{
+    await pages('main').header.menu.getItem('careers').click();
+    await pages('career').form.input.setValue('Frontend');
+    await browser.keys([Key.Ctrl, 'a']);
+    await browser.keys([Key.Ctrl, 'c']);
+    await (pages('main').header.searchButton).click();
+    await (pages('main').header.input).click();
+    await browser.keys([Key.Ctrl, 'v']);
+    await expect(pages('main').header.input).toHaveValue('Frontend');
   });
 });
