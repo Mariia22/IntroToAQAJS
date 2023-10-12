@@ -40,10 +40,10 @@ describe('Main page', ()=>{
 
   /* Task2 */
 
-  // Here I use my new command 'waitThenClick'
+  // I use my overwritten command "Click" for the second line (wait displaying and then click)
   it('Check language switch', async () => {
     await (pages('main').header.switchLanguageButton).click();
-    await (pages('main').header.languageMenu.getLanguage('German')).waitThenClick();
+    await (pages('main').header.languageMenu.getLanguage('German')).click();
     await expect(browser).toHaveUrl('https://www.epam.de/');
   });
 

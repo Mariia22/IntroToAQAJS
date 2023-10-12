@@ -1,3 +1,5 @@
+const {Key} = require('webdriverio');
+
 function overwriteCommands() {
   browser.overwriteCommand('click', async function(originClickFunction) {
     await this.waitForDisplayed();
@@ -6,11 +8,10 @@ function overwriteCommands() {
 }
 
 function addCommands() {
-  browser.addCommand('waitThenClick', async function() {
-    await this.waitForExist();
-    await this.waitForDisplayed();
-    await this.click();
-  }, true);
+  browser.addCommand('selectAndCopy', async function() {
+    await browser.keys([Key.Ctrl, 'a']);
+    await browser.keys([Key.Ctrl, 'c']);
+   });
 }
 
 module.exports = {

@@ -15,17 +15,13 @@ describe('Career page', ()=>{
     );
   });
 
-  // I've overwritten base click()command, so scrolling is no longer needed.
   it('Check search using job search form', async ()=>{
     await pages('main').header.menu.getItem('careers').click();
     await pages('career').cookieAcceptButton.click();
     await pages('career').form.input.setValue('Frontend');
     await pages('career').form.locationSelector.selectIcon.click();
-    // await pages('career').form.locationSelector.country.scrollIntoView();
     await pages('career').form.locationSelector.country.click();
-    // await pages('career').form.locationSelector.city.scrollIntoView();
     await pages('career').form.locationSelector.city.click();
-    // await pages('career').form.submitButton.scrollIntoView();
     await pages('career').form.submitButton.click();
     await expect(pages('career').searchList.listItems).toBeElementsArrayOfSize(2);
   });
@@ -41,11 +37,11 @@ describe('Career page', ()=>{
     await expect(pages('career').searchList.messageNoResult).toHaveText('Sorry, your search returned no results. Please try another combination.');
   });
 
+  //I use new added command "Select and copy"
   it('Check copy/paste command from one input to another', async () =>{
     await pages('main').header.menu.getItem('careers').click();
     await pages('career').form.input.setValue('Frontend');
-    await browser.keys([Key.Ctrl, 'a']);
-    await browser.keys([Key.Ctrl, 'c']);
+    await browser.selectAndCopy();
     await (pages('main').header.searchButton).click();
     await (pages('main').header.input).click();
     await browser.keys([Key.Ctrl, 'v']);
