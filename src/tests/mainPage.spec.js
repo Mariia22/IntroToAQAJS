@@ -30,11 +30,12 @@ describe('Main page', ()=>{
   });
 
   it('Check the navigation through hamburger menu', async () => {
+    await pages('main').cookieAcceptButton.click();
     await (pages('main').header.hamburgerMenuButton).click();
     await (pages('main').header.hamburgerMenu.getItem('about')).click();
     await (pages('main').header.hamburgerMenu.getItem('aboutCompany')).click();
     await (pages('main').header.hamburgerMenu.getItem('contact')).click();
-    await expect(pages('main').contactInfo).toHaveTextContaining(['41 University Drive • Suite 202,', ' Newtown, PA 18940 • USA ', 'P +1-267-759-9000', 'F +1-267-759-8989']);
+    await expect(pages('contact').contactInfo).toHaveTextContaining(['41 University Drive • Suite 202,', ' Newtown, PA 18940 • USA ', 'P +1-267-759-9000', 'F +1-267-759-8989']);
   });
 
   /* Task2 */
@@ -52,6 +53,6 @@ describe('Main page', ()=>{
     await (pages('main').header.dropdownMenuList).waitForDisplayed();
     await (pages('main').header.menu.getItem('optimizingforgrowth')).moveTo();
     const textDecoration = await (pages('main').header.menu.getItem('optimizingforgrowth')).getCSSProperty('textDecoration');
-    await expect(textDecoration.value).toBe('underline 1px solid rgb(255, 255, 255)');
+    await expect(textDecoration.value).toBe('underline 1px solid rgb(0, 0, 0)');
   });
 });

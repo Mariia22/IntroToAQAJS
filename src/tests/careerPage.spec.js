@@ -4,10 +4,9 @@ const {Key} = require('webdriverio');
 describe('Career page', ()=>{
   beforeEach( async ()=>{
     await pages('main').open();
-    await pages('career').cookieAcceptButton.click();
   });
 
-  // /* Task1 */
+  /* Task1 */
 
   it('Check page title', async ()=>{
     await pages('main').header.menu.getItem('careers').click();
@@ -19,6 +18,7 @@ describe('Career page', ()=>{
   // I've overwritten base click()command, so scrolling is no longer needed.
   it('Check search using job search form', async ()=>{
     await pages('main').header.menu.getItem('careers').click();
+    await pages('career').cookieAcceptButton.click();
     await pages('career').form.input.setValue('Frontend');
     await pages('career').form.locationSelector.selectIcon.click();
     // await pages('career').form.locationSelector.country.scrollIntoView();

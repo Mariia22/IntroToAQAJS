@@ -1,6 +1,6 @@
 function overwriteCommands() {
   browser.overwriteCommand('click', async function(originClickFunction) {
-    await this.scrollIntoView();
+    await this.waitForDisplayed();
     await originClickFunction();
   }, true);
 }

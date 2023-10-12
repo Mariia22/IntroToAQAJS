@@ -9,6 +9,10 @@ class BasePage {
   open() {
     return browser.url(this.url);
   }
+
+  get cookieAcceptButton() {
+    return $('#onetrust-accept-btn-handler');
+  }
 }
 
 module.exports = BasePage;
