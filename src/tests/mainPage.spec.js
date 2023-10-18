@@ -58,7 +58,6 @@ describe('Main page', ()=>{
   /* Task3 */
 
   it('Check a main slider on a main page', async ()=>{
-    await pages('main').cookieAcceptButton.click();
     await (pages('main').slider.sliderRightButton).click();
     await (pages('main').slider.sliderCurrentPage).waitUntil(
         async function() {
@@ -68,5 +67,14 @@ describe('Main page', ()=>{
           timeoutMsg: 'Expected text to be different after 2s',
         });
     await expect(pages('main').slider.sliderTitle).toHaveText('EPAM Announces');
+  });
+
+  it('Check the theme mode info in the locale storage', async () => {
+    await (pages('main').header.themeSwitcher).click();
+    const key = 'theme-mode';
+    const value = await browser.execute(function(key) {
+      return window.localStorage.getItem(key);
+    }, key);
+    await expect(value).toBe('dark-mode');
   });
 });
