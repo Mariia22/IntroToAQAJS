@@ -47,12 +47,26 @@ describe('Main page', ()=>{
     await expect(browser).toHaveUrl('https://www.epam.de/');
   });
 
-
   it('Check that the link in the dropdown menu change text decoration after hovering', async () =>{
     await (pages('main').header.menu.getItem('services')).moveTo();
     await (pages('main').header.dropdownMenuList).waitForDisplayed();
     await (pages('main').header.menu.getItem('optimizingforgrowth')).moveTo();
     const textDecoration = await (pages('main').header.menu.getItem('optimizingforgrowth')).getCSSProperty('textDecoration');
     await expect(textDecoration.value).toBe('underline 1px solid rgb(0, 0, 0)');
+  });
+
+  /* Task3 */
+
+  it('Check a main slider on a main page', async ()=>{
+    await pages('main').cookieAcceptButton.click();
+    await (pages('main').slider.sliderRightButton).click();
+    await (pages('main').slider.sliderCurrentPage).waitUntil(
+        async function() {
+          return (await this.getText() === '02');
+        }, {
+          timeout: 2000,
+          timeoutMsg: 'Expected text to be different after 2s',
+        });
+    await expect(pages('main').slider.sliderTitle).toHaveText('EPAM Announces');
   });
 });

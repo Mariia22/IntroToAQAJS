@@ -11,7 +11,7 @@ function addCommands() {
   browser.addCommand('selectAndCopy', async function() {
     await browser.keys([Key.Ctrl, 'a']);
     await browser.keys([Key.Ctrl, 'c']);
-   });
+  });
 }
 
 module.exports = {
