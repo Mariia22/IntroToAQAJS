@@ -3,6 +3,7 @@ const CareerFormComponent = require('./career/careerForm.component');
 const SearchResultList = require('./career/searchResultList.component');
 const LocationSliderComponent = require('./contact/locationSlider.component');
 const SliderComponent = require('./main/slider.component');
+const statisticSliderComponent = require('./about/statisticSlider.component');
 
 module.exports = {
   HeaderComponent,
@@ -10,4 +11,5 @@ module.exports = {
   SearchResultList,
   LocationSliderComponent,
   SliderComponent,
+  statisticSliderComponent,
 };
