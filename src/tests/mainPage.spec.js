@@ -24,6 +24,7 @@ describe('Main page', ()=>{
   });
 
   it('Check the navigation through nested menu items', async () => {
+    await pages('main').cookieAcceptButton.click()
     await pages('main').header.menu.getItem('industries').moveTo();
     await pages('main').header.menu.getItem('medtech').click();
     await expect(browser).toHaveUrl('https://www.epam.com/industries/life-sciences-and-healthcare/medtech');
@@ -31,9 +32,15 @@ describe('Main page', ()=>{
 
   // condition is added
   it('Check the navigation through hamburger menu', async () => {
-    if(pages('main').cookieAcceptButton.isDisplayed()){
+    try {
       await pages('main').cookieAcceptButton.click()
     }
+    catch {
+      console.log('Button is not displayed')
+    }
+    //if(pages('main').cookieAcceptButton.isDisplayed()){
+    //  await pages('main').cookieAcceptButton.click()
+    //}
     await pages('main').header.hamburgerMenuButton.click();
     await pages('main').header.hamburgerMenu.getItem('about').click();
     await pages('main').header.hamburgerMenu.getItem('aboutCompany').click();
