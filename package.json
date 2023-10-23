@@ -7,7 +7,7 @@
   "scripts": {
     "test": "wdio run ./src/configs/wdio.conf.js",
     "lint": "eslint ./src --fix",
-    "debug": "wdio run ./src/configs/wdio.conf.js --spec ./src/tests/aboutPage.spec.js"
+    "debug": "wdio run ./src/configs/wdio.conf.js --spec ./src/tests/mainPage.spec.js"
   },
   "keywords": [],
   "license": "ISC",

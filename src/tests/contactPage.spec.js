@@ -9,9 +9,9 @@ describe('Contact page', ()=>{
   /* Task2 */
 
   it('Check horizontal scroll at the location slider', async ()=>{
-    await (pages('main').header.contactButton).click();
-    await (pages('contact').slider.getRegion('EMEA')).click();
-    await (pages('contact').slider.sliderElement).scrollIntoView();
+    await pages('main').header.contactButton.click();
+    await pages('contact').slider.getRegion('EMEA').click();
+    await pages('contact').slider.sliderElement.scrollIntoView();
     await expect(pages('contact').slider.sliderElementList).toHaveTextContaining(['Malta', 'Montenegro', 'Netherlands', 'Poland'], {ignoreCase: true});
   });
 });
